@@ -1,0 +1,70 @@
+A)
+I used:
+SELECT ShipperID FROM Shippers
+WHERE ShipperName='Speedy Express'
+
+To figure out I needed ShipperID = 1. Then, I used the following for the solution
+
+SELECT COUNT(OrderID) FROM Orders
+WHERE ShipperID=1;
+
+B)
+
+I used the following query to find which employee had the most orders:
+
+SELECT COUNT(*) FROM Orders
+Where EmployeeID=x;
+
+Using this, I varied x between 1 and 9, and observed that Employee 4 had the most orders (40)
+Then, I used EmployeeID=4 to find their last name:
+
+SELECT LastName FROM Employees
+WHERE EmployeeID=4;
+
+Which is Peacock. The employee's name is Margaret Peacock
+
+C)
+
+First, I found all of the German customers using the following:
+
+SELECT CustomerID FROM Customers
+WHERE Country='Germany'
+
+That yielded the following values:
+CustomerID: [1, 6, 17, 25, 39, 44, 52, 56, 63, 79, 86]
+
+Those CustomerID's were responsible for the following orders:
+
+11111
+10267
+10273
+10277
+10279
+10284
+10285
+10286
+10301
+10312
+10313
+10337
+10342
+10343
+10345
+10348
+10356
+10361
+10363
+10366
+10391
+10396
+10407
+10418
+10426
+10438
+
+I used a query that returned the order details from these orders. Then, I added up which product had the highest sum
+quantity ordered. That product is product #40: Boston Crab Meat
+
+
+SELECT ProductName FROM Products
+WHERE ProductID=40
